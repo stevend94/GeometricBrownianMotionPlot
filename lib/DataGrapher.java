@@ -43,8 +43,8 @@ public class DataGrapher extends JPanel {
           for(int j = 1; j < data[i].length; j++) {
               x = PAD + (j * xInc);
               y = HEIGHT - PAD - (scale*data[i][j]);
-              g2.fill(new Ellipse2D.Double(x-2, y-2, 4, 4));
-              g2.draw(new Line2D.Double(xLast, yLast, x, y));
+              g2.fill(new Ellipse2D.Double(x-2, y-2, 4, 4));       //draw points
+              g2.draw(new Line2D.Double(xLast, yLast, x, y));      //draw lines from last point
               xLast = x;
               yLast = y;
             }
@@ -52,6 +52,7 @@ public class DataGrapher extends JPanel {
     }
 
     private float dataMax() {
+        //Function to get the largest value of the data set
         float max = -1 * Integer.MAX_VALUE;
         for(int i = 0; i < data.length; i++) {
           for(int j = 0; j < data[i].length ; j++) {

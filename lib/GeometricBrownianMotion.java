@@ -18,6 +18,7 @@ public class GeometricBrownianMotion {
 
   public GeometricBrownianMotion(int processes, int iterations, float increment) {
     if(processes <= MAXPROCESSES) {
+      //Incase it exceed the maximum allocated processes allowed
       s = new float[processes];
       mu = new float[processes];
       sigma = new float[processes];
@@ -73,9 +74,11 @@ public class GeometricBrownianMotion {
         for(int j = 0; j < ProcessNo; j++) {
           data[j][i] = s[j];
           if(ranIndependence[j] == false) {
+            //Here all data is dependent on the same randomness for our GeometricBrownianMotion equation
             s[j] = s[j] * (float)Math.exp((mu[j] - ((sigma[j]*sigma[j])/2) * dt) + (sigma[j] * Math.sqrt(dt) * r));
           }
           else {
+            //Here randomness for our Geometric Brownian Motion equation is independent of other processes
             s[j] = s[j] * (float)Math.exp((mu[j] - ((sigma[j]*sigma[j])/2) * dt) + (sigma[j] * Math.sqrt(dt) * gauss.nextGaussian()));
           }
         }
