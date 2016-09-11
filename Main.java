@@ -17,11 +17,11 @@ public class Main {
   public static void main(String[] args) {
       // TODO code application logic here
       GeometricBrownianMotion gbm = new GeometricBrownianMotion(PROCESSES, ITERATIONS, INCREMENT);
-      gbm.setProcess(0, 5, 0.01f, 1f);
-      gbm.setProcess(1, 5, 0.01f, 1.2f);
-      gbm.setProcess(2, 5, 0.01f, 1.6f);
-      gbm.setProcess(3, 5, 0.01f, 1.4f);
-      gbm.setProcess(4, 5, 0.01f, 1.5f);
+      gbm.setProcess(0, 5, 0.01f, 0.5f);
+      gbm.setProcess(1, 5, 0.01f, 0.4f, true);
+      gbm.setProcess(2, 5, 0.01f, 0.3f);
+      gbm.setProcess(3, 5, 0.01f, 0.2f);
+      gbm.setProcess(4, 5, 0.01f, 0.1f);
       DataGrapher graph = new DataGrapher(gbm.generateData());
 
       JFrame f = new JFrame();
