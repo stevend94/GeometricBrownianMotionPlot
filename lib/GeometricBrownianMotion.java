@@ -75,11 +75,11 @@ public class GeometricBrownianMotion {
           data[j][i] = s[j];
           if(ranIndependence[j] == false) {
             //Here all data is dependent on the same randomness for our GeometricBrownianMotion equation
-            s[j] = s[j] * (float)Math.exp((mu[j] - ((sigma[j]*sigma[j])/2) * dt) + (sigma[j] * Math.sqrt(dt) * r));
+            s[j] = s[j] * (float)Math.exp((mu[j] - ((sigma[j]*sigma[j])/2)*dt) + (sigma[j]*Math.sqrt(dt)*r));
           }
           else {
             //Here randomness for our Geometric Brownian Motion equation is independent of other processes
-            s[j] = s[j] * (float)Math.exp((mu[j] - ((sigma[j]*sigma[j])/2) * dt) + (sigma[j] * Math.sqrt(dt) * gauss.nextGaussian()));
+            s[j] = s[j] * (float)Math.exp((mu[j] - ((sigma[j]*sigma[j])/2)*dt) + (sigma[j]*Math.sqrt(dt)*gauss.nextGaussian()));
           }
         }
       }
