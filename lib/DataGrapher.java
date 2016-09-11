@@ -26,22 +26,22 @@ public class DataGrapher extends JPanel {
         g2.draw(new Line2D.Double(PAD, PAD, PAD, HEIGHT - PAD));
         g2.draw(new Line2D.Double(PAD, HEIGHT - PAD, WIDTH - PAD, HEIGHT - PAD));
 
-        double xInc = (double)(WIDTH - (2 * PAD))/(data[0].length-1);
-        double scale = (double)(HEIGHT - (2 * PAD))/dataMax();
+        double xInc = (double)(WIDTH - (2*PAD))/(data[0].length - 1);
+        double scale = (double)(HEIGHT - (2*PAD))/dataMax();
 
         //Draw points and lines
         int block_scale = 0;
         for(int i = 0; i < data.length; i++) {
-          if( i == ((block_scale + 1) * colors.length)) {
+          if( i == ((block_scale + 1)*colors.length)) {
             block_scale++;
           }
-          g2.setPaint(colors[i - (block_scale * colors.length)]);
+          g2.setPaint(colors[i - (block_scale*colors.length)]);
           double x = PAD;
           double y = HEIGHT - PAD - scale*data[i][0];
           double xLast = x;
           double yLast = y;
           for(int j = 1; j < data[i].length; j++) {
-              x = PAD + (j * xInc);
+              x = PAD + (j*xInc);
               y = HEIGHT - PAD - (scale*data[i][j]);
               g2.fill(new Ellipse2D.Double(x-2, y-2, 4, 4));       //draw points
               g2.draw(new Line2D.Double(xLast, yLast, x, y));      //draw lines from last point
