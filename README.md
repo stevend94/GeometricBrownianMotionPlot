@@ -37,7 +37,7 @@ how each process has independent randomness at each iteration to all other proce
 When a large number of processes are included, the computations of the simulation and the plotting of many data points
  on the graph becomes quite strenuous on any cpu (obviously) but after several tests on machine I decided to set the maximal
  processes for the simulation at 200, whilst not restricting the number of iterations (usually set at 400, there was in occasion
- in which I accidently process 4000 iterations each for 200 processes which I didn't realise but be came suspicious when the applet
+ in which I accidently process 4000 iterations each for 200 processes which I didn't realise but became suspicious when the applet
  was using 30/40% of my cpu). This ofcourse can be readily changed with any lower/higher value you wish,
  i've also included a couple of images of the stress tests below
 
