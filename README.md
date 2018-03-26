@@ -1,6 +1,6 @@
 # GeometricBrownianMotionPlot
 A simple program to simulate geometric brownian motion which is used in the black-scholes model for pricing derivated as a way
-to represent movement of stock prices, includes parellization computation of data. This program was written in java and compiled
+to represent movement of stock prices. This program was written in java and compiled
 using javac compiler version 1.8.0_60, the graph program is relatively simplistic in it's  design but works well in plotting the
 data of our geometric brownian motion simulation.
 
